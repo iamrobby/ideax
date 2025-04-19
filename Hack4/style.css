@@ -1,3 +1,4 @@
+/* Custom styles for the container */
 body {
     background-color: #f7fafc;
     font-family: Arial, sans-serif;
@@ -60,4 +61,3 @@ body {
     height: 200px;
     overflow: auto;
     white-space: pre-wrap;
-  }

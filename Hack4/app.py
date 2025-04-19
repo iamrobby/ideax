@@ -9,13 +9,14 @@ CORS(app)
 def debug():
     data = request.get_json()
     code = data.get('code')
-    input_data = data.get('input_data')
+   
 
     if not code or not isinstance(code, str):
         return jsonify({"error": "Invalid code provided"}), 400
 
     try:
-        output = run_user_code(code, input_data)
+       
+        output = run_user_code(code)  
         return jsonify({"output": output})
     except Exception as e:
         return jsonify({"error": str(e)}), 400

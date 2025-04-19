@@ -13,8 +13,8 @@
     <label for="code">Code:</label>
     <textarea id="code" placeholder="ENTER YOUR PYTHON CODE " rows="10"></textarea>
 
-    <label for="input">Input Data:</label>
-    <textarea id="input" placeholder="Enter INPUT VALUES IF YOU WANT TO TEST WITH VARIABLES " rows="5"></textarea>
+    <!-- <label for="input">Input Data:</label>
+    <textarea id="input" placeholder="Enter INPUT VALUES IF YOU WANT TO TEST WITH VARIABLES " rows="5"></textarea> -->
 
     <button onclick="runDebugger()" class="button">Run</button>
 
@@ -23,10 +23,11 @@
       <pre id="output"></pre>
     </div>
   </div>
+  <a href="index2.html" class="button">Home</a>
   <script>
     async function runDebugger() {
       const code = document.getElementById("code").value;
-      const input = document.getElementById("input").value;
+      // const input = document.getElementById("input").value;
   
       try {
         const res = await fetch("http://127.0.0.1:5000/api/fetch", {
@@ -34,7 +35,9 @@
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ code, input_data: input })
+
+          //body: JSON.stringify({ code, input_data: input })
+          body: JSON.stringify({ code }) // Removed input_data for 
         });
   
         if (!res.ok) {

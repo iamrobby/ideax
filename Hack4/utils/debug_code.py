@@ -1,14 +1,16 @@
 import io
 import contextlib
+##input_data: str = ""
 
-def run_user_code(code: str, input_data: str = "") -> str:
+def run_user_code(code: str) -> str:
     output = io.StringIO()
     try:
         compile(code, '<string>', 'exec')
         
         local_variables = {}
         with contextlib.redirect_stdout(output):
-            exec(code, {'__builtins__': __builtins__, 'input': lambda: input_data}, local_variables)
+            # exec(code, {'__builtins__': __builtins__, 'input': lambda: input_data}, local_variables)
+            exec(code, {'__builtins__': __builtins__}, local_variables)
         return output.getvalue() or "No output generated"
     
     except SyntaxError as e:
