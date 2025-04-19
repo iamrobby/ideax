@@ -6,19 +6,19 @@
   height: 100vh;
 }
 .main::before {
-  content: ''; /* Create an empty pseudo-element */
+  content: ''; 
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2); /* Lighten using white with 50% opacity */
-  z-index: 1; /* Position the overlay above the background image but below content */
+  background: rgba(255, 255, 255, 0.2); 
+  z-index: 1; 
 }
 
 .navbar {
   position: relative;
-  z-index: 2; /* Ensure navbar is above the overlay */
+  z-index: 2; 
   width:1200px;
   height:75px;
   margin:auto;
@@ -31,8 +31,8 @@
 }
 
 .logo {
-  color:#ff7200; /* Keep the text color visible on the lightened background */
-  /*z-index: 3; /* Make sure the logo is above everything else */
+  color:#ff7200; 
+  
   font-size:35px;
   font-family: Arial;
   padding-left:10px;
@@ -67,16 +67,16 @@ ul li a:hover{
   color:#fff;
   position:relataive;
 }
-.content p { /* Targeting paragraphs within .content */
+.content p { 
   padding-left: 20px;
   padding-bottom: 25px;
   font-family: Arial;
   letter-spacing: 1.2px;
   line-height: 30px;
-  font-size: 20px; /* Increase font size here */
+  font-size: 20px; 
 }
 
-.content. par{
+.content.par{
   padding-left:20px;
   padding-bottom:25px;
   font-family:Arial;

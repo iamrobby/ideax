@@ -1,57 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>AI Code Debugger</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1> Python Code error catcher</h1>
-    <h2 style="background-color: red;">FOR NOW OUR CODE CAN DETECT (SYNTAX ERRORS) (RUN TIME ERRORS) (ZERO DIVISION ERROR)</h2>
-
-    <label for="code">Code:</label>
-    <textarea id="code" placeholder="ENTER YOUR PYTHON CODE " rows="10"></textarea>
-
-    <!-- <label for="input">Input Data:</label>
-    <textarea id="input" placeholder="Enter INPUT VALUES IF YOU WANT TO TEST WITH VARIABLES " rows="5"></textarea> -->
-
-    <button onclick="runDebugger()" class="button">Run</button>
-
-    <div class="output-container">
-      <label for="output">Output:</label>
-      <pre id="output"></pre>
+  <head>
+    <title>HACK-MATE</title>
+    <link rel="stylesheet" href="style2.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="icon">
+          <h2 class="logo">HackMate</h2>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>  
+            <li><a href="#">About</a></li>
+            <li><a href="./index2.html">Error Checker</a>
+            </li>
+            <li><a href="#">Idea Generator</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Error Checker & Idea<br><span>Generator</span></h1>
+        <p class="par">AI proactively scans and resolves bugs, like auto-analyzing commits or optimizing DB queries in builds.<br> Proactive Debugging Tactics: Gain insights into error patterns, enhancing your code quality with AI-enriched learning.</p>
+      </div>
     </div>
-  </div>
-  <a href="index2.html" class="button">Home</a>
-  <script>
-    async function runDebugger() {
-      const code = document.getElementById("code").value;
-      // const input = document.getElementById("input").value;
-  
-      try {
-        const res = await fetch("http://127.0.0.1:5000/api/fetch", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-
-          //body: JSON.stringify({ code, input_data: input })
-          body: JSON.stringify({ code }) // Removed input_data for 
-        });
-  
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-  
-        const data = await res.json();
-        document.getElementById("output").innerText = data.output;
-      } catch (error) {
-        document.getElementById("output").innerText = `Error: ${error.message}`;
-        console.error("Error during fetch:", error);  
-      }
-    }
-  </script>
   </body>
-  </html>
-  
+</html>
