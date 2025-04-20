@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Code Debugger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1> Python Code error catcher</h1>
+    <h2 style="background-color: red;">FOR NOW OUR CODE CAN DETECT (SYNTAX ERRORS) (RUN TIME ERRORS) (ZERO DIVISION ERROR)</h2>
+
+    <label for="code">Code:</label>
+    <textarea id="code" placeholder="ENTER YOUR PYTHON CODE " rows="10"></textarea>
+
+  
+
+    <button onclick="runDebugger()" class="button">Run</button>
+
+    <div class="output-container">
+      <label for="output">Output:</label>
+      <pre id="output"></pre>
+    </div>
+  </div>
+  <a href="index2.html" class="button">Home</a>
+  <script>
+    async function runDebugger() {
+      const code = document.getElementById("code").value;
+      
+  
+      try {
+        const res = await fetch("http://127.0.0.1:5000/api/fetch", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+
+          
+          body: JSON.stringify({ code }) 
+        });
+  
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+  
+        const data = await res.json();
+        document.getElementById("output").innerText = data.output;
+      } catch (error) {
+        document.getElementById("output").innerText = `Error: ${error.message}`;
+        console.error("Error during fetch:", error);  
+      }
+    }
+  </script>
+  </body>
+  </html>
+  

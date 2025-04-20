@@ -1,0 +1,63 @@
+/* Custom styles for the container */
+body {
+    background-color: #f7fafc;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(255, 185, 237);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    space-between: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d3748;
+  }
+
+  label {
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #fff2ab;
+    resize: none;
+  }
+
+  .button {
+    background-color: green;
+    color: rgb(255, 255, 255);
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+  }
+
+  .button:hover {
+    background-color: #32af2c;
+  }
+
+  .output-container {
+    margin-top: 20px;
+  }
+
+  pre {
+    background-color: #edf2f7;
+    padding: 16px;
+    border-radius: 8px;
+    height: 200px;
+    overflow: auto;
+    white-space: pre-wrap;
